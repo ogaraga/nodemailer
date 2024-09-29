@@ -1,5 +1,5 @@
 require('dotenv').config();
-const sendMessage = require("../model/sendMessage");
+const sendMessage = require("../model/SendMessage");
 const User = require("../model/User");
 const bcrypt = require('bcrypt');
 const JWT = require('jsonwebtoken');
