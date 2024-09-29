@@ -5,6 +5,7 @@ const app = express();
 const cors = require('cors');
 const cookieParser =require('cookie-parser');
 const allRoutes = require('./routes/routes');
+
 //database connection
 connectionz();
 
@@ -13,10 +14,10 @@ connectionz();
 const port = process.env.PORT || 5501
 
 //middelwares
-if(process.env.NOD_ENV === 'development'){
+if(process.env.NOD_ENV){
 
     app.use(cors({
-        origin:['http://localhost:5173','http://localhost:5500'],
+        origin:['http://localhost:5173',process.env.SERVER_URI],
         methods: ['POST','GET','PUT','DELETE'],
         credentials: true
     }))
