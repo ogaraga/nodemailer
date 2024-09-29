@@ -1,0 +1,30 @@
+.content{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    margin: auto 10px;
+    text-align: center;
+}
+.content h1{
+    color: aliceblue;
+    text-rendering: optimizeLegibility;
+    text-rendering: geometricPrecision;
+    text-rendering: optimizeSpeed;
+    opacity: 0.7;
+}
+.content hr{
+    margin-top: 10px;
+}
+.content a{
+    text-decoration: none;
+    border: 1px solid grey;
+    background-color: aliceblue;
+    padding: 5px;
+    outline: none;
+}
+.content a:hover{
+    background-color: black;
+    color: aliceblue;
+    border: 1px solid white;
+    outline: none;
+}
