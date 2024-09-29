@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Content.module.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -7,7 +7,7 @@ function Content() {
   const { _id, token } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`http://localhost:5500/log/content/${_id}/${token}`, {
+    fetch(`https://nodemailer-ap1.vercel.app/log/content/${_id}/${token}`, {
       method: "GET",
       credentials: "include",
       headers: {

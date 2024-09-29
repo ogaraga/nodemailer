@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useNavigate} from "react-router-dom";
 import styles from "./Login.module.css";
 function Login() {
   const [value, setValue] = useState({
@@ -32,7 +32,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("http://localhost:5500/log/login", {
+    await fetch("https://nodemailer-ap1.vercel.app/log/login", {
       method: "POST",
       credentials: "include",
       headers: { "content-type": "application/json" },

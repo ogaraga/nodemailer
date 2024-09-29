@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import {useState } from "react";
 import styles from "./Message.module.css";
 import { useNavigate, useParams } from "react-router-dom";
 function Message() {
@@ -19,7 +19,7 @@ function Message() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`http://localhost:5500/log/message/${token}`, {
+    await fetch(`https://nodemailer-ap1.vercel.app/log/message/${token}`, {
       method: "POST",
       credentials: "include",
       headers: {
@@ -39,7 +39,7 @@ function Message() {
           setIsLoading("Wait! checking credentials...");
           setTimeout(() => {
             alert(data);
-            navigate(`/log/log/${token}`);
+            navigate(`/log/message/${token}`);
             setIsLoading(isLoading);
           }, 3000);
         }

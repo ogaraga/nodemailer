@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Register.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -48,7 +48,7 @@ function Register() {
   //submit form
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5500/log/register", {
+    fetch("https://nodemailer-ap1.vercel.app/log/register", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({

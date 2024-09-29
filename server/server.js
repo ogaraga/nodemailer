@@ -17,7 +17,7 @@ const port = process.env.PORT || 5501
 if(process.env.NOD_ENV){
 
     app.use(cors({
-        origin:['http://localhost:5173',process.env.SERVER_URI],
+        origin:['https://nodemailer-send-message.vercel.app/'],
         methods: ['POST','GET','PUT','DELETE'],
         credentials: true
     }))
