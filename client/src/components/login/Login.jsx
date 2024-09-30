@@ -42,7 +42,7 @@ function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.username !== "" && data.username !== undefined && data.token !== '') {
+        if (data.username && data.token) {
           setIsLoading("Wait! Fetching data...");
           setTimeout(() => {
             alert("You are logged in!");
