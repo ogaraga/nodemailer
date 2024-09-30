@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 function Login() {
   const [value, setValue] = useState({
@@ -42,7 +42,7 @@ function Login() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.username !== "" && data.username !== undefined) {
+        if (data.username !== "" && data.username !== undefined && data.token !== '') {
           setIsLoading("Wait! Fetching data...");
           setTimeout(() => {
             alert("You are logged in!");
