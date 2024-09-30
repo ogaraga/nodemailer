@@ -19,7 +19,7 @@ router.use(sessions({
     resave:false,
     saveUninitialized:false,
     cookie:{
-        maxAge:1000 * 60 * 60//lasts for 1 hr
+        maxAge:1000 * 60 * 60 //lasts for 1 hr
     },
     store:store
 }));
