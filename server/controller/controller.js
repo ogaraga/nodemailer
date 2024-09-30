@@ -75,7 +75,6 @@ module.exports.login = async (req, res) => {
             req.session.id = true;
             req.session.username = user.username;
             const token = await JWT.sign({ id: user._id, email: user.email }, process.env.SECRET_JWT, { expiresIn: '60m' });
-            res.header('Authorization', token);
             res.status(200).json({ username: req.session.username, id: req.session.id, token: token, _id: user._id });
         }
     } catch (err) {
