@@ -25,7 +25,14 @@ function Message() {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(value),
+      body: JSON.stringify({
+        username: value.username,
+        email:value.email,
+        yourGender:value.yourGender,
+        address:value.address,
+        subject:value.subject,
+        message:value.message
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -39,7 +46,7 @@ function Message() {
           setIsLoading("Wait! checking credentials...");
           setTimeout(() => {
             alert(data);
-            navigate(`/log/message/${token}`);
+            navigate(`/log/log/${token}`);
             setIsLoading(isLoading);
           }, 3000);
         }

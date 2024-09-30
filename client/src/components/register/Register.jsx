@@ -64,8 +64,8 @@ function Register() {
       .then((data) => {
         if (data === "User created successfully!") {
           setIsLoading("Wait! Storing details...");
-          alert("Details captured and saved!");
           setTimeout(() => {
+            alert("Details captured and saved!");          
             navigate("/log/login");
           }, 3000);
         } else {
