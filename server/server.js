@@ -16,7 +16,7 @@ const port = process.env.PORT || 5501
 //middelwares
 
 app.use(cors({
-    origin: ['https://nodemailer-send-message.vercel.app'],
+    origin: 'https://nodemailer-send-message.vercel.app',
     methods: ['POST', 'GET', 'PUT', 'DELETE'],
     credentials: true
 }))
