@@ -8,7 +8,6 @@ function Login() {
   });
   const [color, setColor] = useState("black");
   const [isLoading, setIsLoading] = useState("Login");
-  const [user, setUser] = useState("");
   const navigate = useNavigate();
   const change = () => {
     document.body.style.backgroundColor = "aliceblue";
@@ -44,7 +43,6 @@ function Login() {
       .then((res) => res.json())
       .then((data) => {
         if (data.username !== "" && data.username !== undefined) {
-          setUser(data.username);
           setIsLoading("Wait! Fetching data...");
           setTimeout(() => {
             alert("You are logged in!");
@@ -52,7 +50,6 @@ function Login() {
           }, 3000);
         } else {
           setIsLoading("wait! checking credentials...");
-          setUser(user);
           setTimeout(() => {
             setIsLoading(isLoading);
             alert(data);
