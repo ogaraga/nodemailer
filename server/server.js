@@ -3,7 +3,7 @@ const express = require('express');
 const connectionz = require('./db/db');
 const app = express();
 const cors = require('cors');
-const cookieParser =require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const allRoutes = require('./routes/routes');
 
 //database connection
@@ -14,27 +14,19 @@ connectionz();
 const port = process.env.PORT || 5501
 
 //middelwares
-if(process.env.NOD_ENV){
 
-    app.use(cors({
-        origin:[process.env.CLIENT_URI, process.env.SERVER_URI],
-        methods: ['POST','GET','PUT','DELETE'],
-        credentials: true
-    }))
-}else{
-    
 app.use(cors({
-    origin:['https://nodemailer-send-message.vercel.app','https://nodemailer-ap1.vercel.app'],
-    methods: ['POST','GET','PUT','DELETE'],
-        credentials: true
+    origin: ['https://nodemailer-send-message.vercel.app'],
+    methods: ['POST', 'GET', 'PUT', 'DELETE'],
+    credentials: true
 }))
-}
+
 app.use(express.json())
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({ extended: false }))
 app.use(allRoutes)
 app.use(cookieParser())
 
 //listening to port
 app.listen(port,
-     ()=>console.log(`Server running on port ${port}`)
+    () => console.log(`Server running on ${process.env.SERVER_URI}`)
 );

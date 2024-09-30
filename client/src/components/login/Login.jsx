@@ -36,10 +36,7 @@ function Login() {
       method: "POST",
       credentials: "include",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        email: value.email,
-        password: value.password,
-      }),
+      body: JSON.stringify(value),
     })
       .then((res) => res.json())
       .then((data) => {
