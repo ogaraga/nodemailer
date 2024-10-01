@@ -32,7 +32,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch("https://nodemailer-ap1.vercel.app/log/login", {
+    await fetch("https://nodemailer-send-api.vercel.app/log/login", {
       method: "POST",
       credentials: "include",
       headers: { "content-type": "application/json" },

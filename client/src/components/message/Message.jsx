@@ -19,7 +19,7 @@ function Message() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch(`https://nodemailer-ap1.vercel.app/log/message/${token}`, {
+    await fetch(`https://nodemailer-send-api.vercel.app/log/message/${token}`, {
       method: "POST",
       credentials: "include",
       headers: {

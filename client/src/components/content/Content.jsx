@@ -7,7 +7,7 @@ function Content() {
   const { _id, token } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
-    fetch(`https://nodemailer-ap1.vercel.app/log/content/${_id}/${token}`, {
+    fetch(`https://nodemailer-send-api.vercel.app/log/content/${_id}/${token}`, {
       method: "GET",
       credentials: "include",
       headers: {

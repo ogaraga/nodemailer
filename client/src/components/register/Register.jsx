@@ -48,7 +48,7 @@ function Register() {
   //submit form
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://nodemailer-ap1.vercel.app/log/register", {
+    fetch("https://nodemailer-send-api.vercel.app/log/register", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
