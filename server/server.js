@@ -28,5 +28,5 @@ app.use(cookieParser())
 
 //listening to port
 app.listen(port,
-    () => console.log(`Server running on ${process.env.SERVER_URI}`)
+    () => console.log(`Server running on ${process.env.SERVER_URI}:${port}`)
 );
